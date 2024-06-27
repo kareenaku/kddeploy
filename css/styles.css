@@ -1,0 +1,182 @@
+/* styles.css */
+
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic styling for the page */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #ffcccc; /* Warna latar belakang dengan nuansa pink */
+}
+
+.carousel {
+    width: 100%; /* Lebar maksimum carousel */
+    max-width: 100%; /* Lebar maksimum sesuai dengan parent element */
+    height: auto; /* Tinggi disesuaikan dengan konten di dalamnya */
+    overflow: hidden;
+    position: relative;
+    margin-top: 20px; /* Jarak dari konten di atasnya */
+}
+
+.carousel-slide {
+    display: none;
+}
+
+.carousel-slide img {
+    width: 20%;
+    height: auto;
+}
+
+.active {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .carousel-slide img {
+        max-width: 100%;
+    }
+    .carousel {
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel {
+        height: 150px; /* Mengatur tinggi carousel untuk layar sangat kecil */
+    }
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.9); /* Warna latar belakang kontainer dengan transparansi */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 90%; /* Lebar maksimal kontainer */
+    width: 100%; /* Menyesuaikan lebar kontainer dengan lebar layar */
+    text-align: center;
+}
+
+.invitation {
+    display: inline-block; /* Mengubah elemen invitation menjadi inline-block */
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 50%; /* Membuat border-radius agar menjadi lingkaran */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.invitation:hover {
+    transform: scale(0.95); /* Mengurangi ukuran saat dihover */
+}
+
+.invitation img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 50%; /* Mengatur border-radius untuk menjadi lingkaran */
+}
+
+/* Gaya untuk tombol tambahan */
+.button-container {
+    margin-top: 20px; /* Jarak antara tombol dengan konten di atasnya */
+    text-align: center; /* Untuk mengatur tombol agar berada di tengah */
+}
+
+.button-container button {
+    background-color: #007bff; /* Warna latar belakang tombol */
+    color: #fff; /* Warna teks tombol */
+    padding: 10px 20px; /* Padding di dalam tombol */
+    font-size: 1em; /* Ukuran font teks tombol */
+    border: none; /* Menghapus border tombol */
+    cursor: pointer; /* Menampilkan kursor tangan saat mengarahkan ke tombol */
+    border-radius: 5px; /* Mengatur sudut melengkung pada tombol */
+    text-decoration: none; /* Menghapus garis bawah pada tautan di dalam tombol */
+}
+
+.button-container button:hover {
+    background-color: #0056b3; /* Warna latar belakang tombol saat dihover */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 50%; /* Mengatur border-radius untuk menjadi lingkaran */
+}
+
+.invitation:hover .overlay {
+    opacity: 0.8; /* Mengurangi opasitas overlay saat dihover */
+}
+
+.invitation-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    z-index: 1;
+}
+
+header {
+    margin-top: 20px;
+}
+
+header img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    color: #343a40;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+main {
+    color: #495057;
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-top: 20px;
+}
+
+footer {
+    margin-top: 20px;
+    color: #6c757d;
+    font-size: 0.8em;
+}
+
+/* Animasi untuk konten yang muncul */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.content {
+    opacity: 0;
+    animation: slideIn 0.5s forwards;
+}
